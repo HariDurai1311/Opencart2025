@@ -57,12 +57,16 @@ public class BaseClass {
 		//driver.get("https://tutorialsninja.com/demo/");
 		driver.get(p.getProperty("url")); //reading values from properties file
 		driver.manage().window().maximize();
+		Date d =new Date();
+		System.out.println("Start Time : "+d);
 
 
 	}
 	@AfterClass	(groups = {"Sanity","Regression","Master", "Datadriven"})//grouping
 	//@AfterClass	
 	public void teardown() {
+		Date d =new Date();
+		System.out.println("End Time : "+d);
 		driver.quit();
 	}
 
